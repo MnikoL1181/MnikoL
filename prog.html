@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Portfolio</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/aclc.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+        body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .main-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .center {
+            text-align: center;
+        }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-image-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin-right: 2rem;
+      overflow: hidden;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      position: absolute;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: translateX(100%);
+    }
+
+    .profile-image.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .carousel-buttons {
+      position: absolute;
+      bottom: 10px; /* Adjusted to ensure visibility */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px; /* Adds space between buttons */
+    }
+
+    .carousel-button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="header">
+      <div class="header-left active">
+        <a href="dashboard.html" class="logo">
+          <img src="images/acla.png" alt="" />
+        </a>
+      </div>
+
+      <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+        <span class="bar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </a>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+          <ul>
+            <li >
+              <a href="basicinformation.html"><img src="assets/img/icons/dashboard.svg" alt="img" /><span>
+                  Basic Information</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="skills.html"><img src="assets/img/icons/purchase1.svg" alt="img" /><span>
+                  Skills</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="knowledge.html"><img src="assets/img/icons/product.svg" alt="img" /><span>
+                  Knowledge</span>
+              </a>
+            </li>
+
+            <li class="active">
+              <a href="prog.html"><img src="assets/img/icons/settings.svg" alt="img" /><span>
+                  Programming language</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="strengths.html"><img src="assets/img/icons/users1.svg" alt="img" /><span>
+                  Strengths</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="others.html"><img src="assets/img/icons/time.svg" alt="img" /><span>
+                  Others</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html"><img src="assets/img/icons/log-out.svg" alt="img" /><span>
+                  Leave</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="page-header">
+          <div class="page-title">
+            
+            <h2 class="center">Knowledge</h2><br>
+            <div class="card">
+              <div class="card-body">
+            <div class="profile">
+              <div class="profile-image-container">
+                <img src="images/web.png" alt="Profile Image 1" class="profile-image active">
+                <img src="images/html.png" alt="Profile Image 2" class="profile-image">
+                <img src="images/css.png" alt="Profile Image 3" class="profile-image">
+                <img src="images/php.png" alt="Profile Image 4" class="profile-image">
+
+              </div>
+              <div class="carousel-buttons">
+                <button class="carousel-button" id="prevBtn">&#9664;</button>
+                <button class="carousel-button" id="nextBtn">&#9654;</button>
+              </div>
+              <div class="profile-details">
+                <p><strong>Web Development</strong></p>
+                <p>Web development refers to the process of building and maintaining websites and web applications.</p>
+                <p>It encompasses various tasks such as web design, web content development, client-side/server-side scripting, and network security configuration.</p>
+                <p></p>
+                <p><strong>HTML</strong></p>
+                <p>HTML is the standard markup language used to create and design web pages.</p>
+                <p>It provides a structure for web content by using a system of tags and attributes to define the layout, text, images, links, and other elements within a webpage.</p>
+                <p></p>
+                <p><strong>CSS</strong></p>
+                <p>CSS is a style sheet language used to enhance the presentation and visual appearance of HTML documents.</p>
+                <p>It allows web developers to control the layout, colors, fonts, and other design aspects of a webpage by applying styles to HTML elements.</p>
+                <p></p>
+                <p><strong>PHP</strong></p>
+                <p>PHP (Hypertext Preprocessor): PHP is a server-side scripting language primarily used for web development.</p>
+                <p>It is commonly embedded into HTML to create dynamic web pages and interact with databases. </p>
+                <p>PHP scripts are executed on the server before the resulting HTML is sent to the client's web browser, enabling the creation of dynamic and interactive web applications.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  
+  <script>
+    const images = document.querySelectorAll('.profile-image');
+    const profileDetails = document.querySelectorAll('.profile-details > p');
+    const profileDetailGroups = chunkArray(Array.from(profileDetails), 4); // Split profile details into groups of 4
+    let currentImageIndex = 0;
+  
+    function chunkArray(array, size) {
+      const chunkedArr = [];
+      for (let i = 0; i < array.length; i += size) {
+        chunkedArr.push(array.slice(i, i + size));
+      }
+      return chunkedArr;
+    }
+  
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.style.transform = i === index ? 'translateX(0)' : 'translateX(100%)';
+        img.style.opacity = i === index ? '1' : '0';
+      });
+  
+      // Hide all profile detail groups
+      profileDetailGroups.forEach(group => {
+        group.forEach(detail => {
+          detail.style.display = 'none';
+        });
+      });
+  
+      // Show the profile detail group for the current image
+      profileDetailGroups[index].forEach(detail => {
+        detail.style.display = 'block';
+      });
+    }
+  
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      showImage(currentImageIndex);
+    });
+  
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      showImage(currentImageIndex);
+    });
+  
+    // Initial display
+    showImage(currentImageIndex);
+  </script>
+  
+  
+
+</html>

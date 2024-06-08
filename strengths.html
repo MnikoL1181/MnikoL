@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Portfolio</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/aclc.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.center {
+        text-align: center;
+    }
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-right: 2rem;
+  overflow: hidden;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.profile-image.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.carousel-buttons {
+  position: absolute;
+  bottom: 10px; /* Adjusted to ensure visibility */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adds space between buttons */
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="header">
+      <div class="header-left active">
+        <a href="dashboard.html" class="logo">
+          <img src="images/acla.png" alt="" />
+        </a>
+        <a href="dashboard.html" class="logo-small">
+          <img src="assets/img/logo-small.png" alt="" />
+        </a>
+      </div>
+
+      <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+        <span class="bar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </a>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+          <ul>
+            <li >
+              <a href="basicinformation.html"><img src="assets/img/icons/dashboard.svg" alt="img" /><span>
+                  Basic Information</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="skills.html"><img src="assets/img/icons/purchase1.svg" alt="img" /><span>
+                  Skills</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="knowledge.html"><img src="assets/img/icons/product.svg" alt="img" /><span>
+                  Knowledge</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="prog.html"><img src="assets/img/icons/settings.svg" alt="img" /><span>
+                  Programming language</span>
+              </a>
+            </li>
+
+            <li class="active">
+              <a href="strengths.html"><img src="assets/img/icons/users1.svg" alt="img" /><span>
+                  Strengths</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="others.html"><img src="assets/img/icons/time.svg" alt="img" /><span>
+                  Others</span>
+              </a>
+            </li>
+            <li>
+              <a href="index.html"><img src="assets/img/icons/log-out.svg" alt="img" /><span>
+                  Leave</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="page-header">
+          <div class="page-title">
+            
+            <h2 class="center">Strengths and Weakness</h2><br>
+            <div class="card">
+              <div class="card-body">
+                
+            <div class="profile">
+              <div class="profile-image-container">
+                <img src="images/strengths.jpg" alt="Profile Image 1" class="profile-image active">
+                <img src="images/weak.jpg" alt="Profile Image 2" class="profile-image">
+
+              </div>
+              <div class="carousel-buttons">
+                <button class="carousel-button" id="prevBtn">&#9664;</button>
+                <button class="carousel-button" id="nextBtn">&#9654;</button>
+              </div>
+              <div class="profile-details">
+                <p class="center"><strong>Strengths</strong></p>
+                <p><strong>Attentive and detail-oriented</strong></p>
+                <p><strong>Patient</strong></p>
+                <p><strong>Collaborative</strong></p>
+                <p><strong>Creative</strong></p>
+                <p><strong>Empathetic</strong></p>
+                <p><strong>Entrepreneurial</strong></p>
+                <p><strong>Flexible and versatile</strong></p>
+                <p><strong>Honest</strong></p>
+                <p><strong>Innovative</strong></p>
+
+                <p class="center"><strong>Weakness</strong></p>
+                <p><strong>Competitive</strong></p>
+                <p><strong>Taking on too much responsibility</strong></p>
+                <p><strong>Perfectionism</strong></p>
+                <p><strong>Self-criticism</strong></p>
+                <p><strong>Not skilled at public speaking</strong></p>
+                <p><strong></strong></p>
+                <p><strong></strong></p>
+                <p><strong></strong></p>
+                <p><strong></strong></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+
+  <script>
+    const images = document.querySelectorAll('.profile-image');
+    const profileDetails = document.querySelectorAll('.profile-details > p');
+    const profileDetailGroups = chunkArray(Array.from(profileDetails), 10); // Split profile details into groups of 4
+    let currentImageIndex = 0;
+  
+    function chunkArray(array, size) {
+      const chunkedArr = [];
+      for (let i = 0; i < array.length; i += size) {
+        chunkedArr.push(array.slice(i, i + size));
+      }
+      return chunkedArr;
+    }
+  
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.style.transform = i === index ? 'translateX(0)' : 'translateX(100%)';
+        img.style.opacity = i === index ? '1' : '0';
+      });
+  
+      // Hide all profile detail groups
+      profileDetailGroups.forEach(group => {
+        group.forEach(detail => {
+          detail.style.display = 'none';
+        });
+      });
+  
+      // Show the profile detail group for the current image
+      profileDetailGroups[index].forEach(detail => {
+        detail.style.display = 'block';
+      });
+    }
+  
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      showImage(currentImageIndex);
+    });
+  
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      showImage(currentImageIndex);
+    });
+  
+    // Initial display
+    showImage(currentImageIndex);
+  </script>
+</body>
+
+</html>
