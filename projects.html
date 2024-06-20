@@ -7,20 +7,14 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
-    body,
-    html {
+    body, html {
       height: 100%;
       margin: 0;
-      /*background-color: rgb(189, 236, 0); */
-    }
-
-
-    .sidebar {
-      background-color: #f9f9f9;
     }
 
     .main-wrapper {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100%;
@@ -80,6 +74,11 @@
       justify-content: center;
       cursor: pointer;
     }
+
+    .page-wrapper {
+      margin: 10px 0; /* Adjust margin to reduce spacing */
+      padding: 10px; /* Adjust padding if needed */
+    }
   </style>
 </head>
 
@@ -137,7 +136,7 @@
                   Strengths</span>
               </a>
             </li>
-            <li>
+            <li class="active">
               <a href="projects.html"><img src="assets/img/icons/excel.svg" alt="img" /><span>
                   Projects</span>
               </a>
@@ -160,28 +159,91 @@
     <div class="page-wrapper">
       <div class="content">
         <div class="page-header">
-          <div class="page-title">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="center">Introduction</h2><br>
-                <p>Hello and welcome to my portfolio!
-                  I am Marian Nicole Magboo, a passionate programmer with expertise in Full-Stack
-                  Development, Data Science, Mobile App Development, etc. Over the years, I have honed my skills in
-                  various programming languages and technologies such as CSS, HTML, JavaScript,
-                  Python, enabling me to build robust, scalable, and efficient applications.</p>
-                <p>In this portfolio, you'll find a collection of my projects that demonstrate my capabilities and
-                  creativity. Each project is a testament to my commitment to excellence and continuous learning. I
-                  believe in writing clean, maintainable code and employing best practices to deliver top-quality
-                  software solutions.</p>
+          <div class="card">
+            <div class="card-body">
+              <div class="profile">
+                <div>
+                  <h2 class="center">ACLC Academic Festival</h2><br>
+                  <img src="images/fb.png">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="page-header">
+          <div class="card">
+            <div class="card-body">
+              <div class="profile">
+                <div>
+                  <h2 class="center">ACLC Academic Festival</h2><br>
+                  <img src="images/fb.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+            
+                <h2 class="center">Projects</h2><br>
+          <div class="card">
+            <div class="card-body">
+              <div class="profile">
+                <div>
+                  <h2 class="center">ACLC Academic Festival</h2><br>
+                  <img src="images/aclcfest.PNG">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <div class="page-wrapper">
+        <div class="content">
+          <div class="page-header">
+            <div class="card">
+              <div class="card-body">
+                <div class="profile">
+                  <div>
+                    <h2 class="center">Multiplication Table Generator</h2><br>
+                    <img src="images/Multi.jpeg">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-wrapper">
+        <div class="content">
+          <div class="page-header">
+            <div class="card">
+              <div class="card-body">
+                <div class="profile">
+                  <div>
+                    <h2 class="center">Facebook Template Imitiation</h2><br>
+                    <img src="images/fb.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
-
-
 </body>
 
 </html>
